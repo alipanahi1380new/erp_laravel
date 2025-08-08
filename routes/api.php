@@ -9,5 +9,5 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::apiResource('product-units', ProductUnitController::class);
+    Route::apiResource('product-units', ProductUnitController::class)->parameters(['product-units' => 'productUnit']);
 });
